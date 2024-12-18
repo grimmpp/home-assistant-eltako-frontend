@@ -10,7 +10,9 @@ authors = ["Philipp Grimm"]
 packages = [ {include ="static"} ]
 include = [ "static/*" ]
 
-
+[tool.poetry.dependencies]
+build = "*"
+wheel = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

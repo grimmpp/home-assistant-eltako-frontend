@@ -3,11 +3,11 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   // root: './src',
   // root: "./dist",
-  root: "./",
+  root: "./src",
   build: {
     outDir: './static',
     rollupOptions: {
-      input: "index.html", // Entry point
+      input: "./src/index.html", // Entry point
     },
   },
   // publicDir: 'public', // Folder for static files

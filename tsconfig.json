@@ -11,8 +11,12 @@
     "baseUrl": ".",                    // Root path
     "paths": {
       "@/*": ["src/*"]                 // Aliases for cleaner imports
-    }
+    },
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
   },
-  "include": ["src/**/*.ts"],          // Include TS files
+  "include": ["src/**/*"],          // Include TS files
   "exclude": ["node_modules", "static"]  // Exclude unnecessary files
 }
