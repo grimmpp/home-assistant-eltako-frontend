@@ -1,15 +1,18 @@
 {
-    "compilerOptions": {
-      "target": "esnext",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "outDir": "dist",
-      "strict": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "sourceMap": true
-    },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules"]
-  }
-  
+  "compilerOptions": {
+    "target": "ESNext",                // Modern JS support
+    "module": "ESNext",                // Native ES modules
+    "moduleResolution": "Node",        // Resolve imports
+    "strict": true,                    // Enable strict type-checking
+    "esModuleInterop": true,           // Interop with ES modules
+    "skipLibCheck": true,              // Skip library checks for faster build
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "static",                  // Output folder
+    "baseUrl": ".",                    // Root path
+    "paths": {
+      "@/*": ["src/*"]                 // Aliases for cleaner imports
+    }
+  },
+  "include": ["src/**/*.ts"],          // Include TS files
+  "exclude": ["node_modules", "static"]  // Exclude unnecessary files
+}

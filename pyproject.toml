@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "home-assistant-eltako-frontend"
+version = "0.1.0"
+description = "A Python package that includes static files"
+readme = "README.md"
+# requires-python = ">=3.7"
+license = "MIT"
+keywords = ["enocean", "eltako", "home assistant", "frontend", "static files"]
+authors = ["Philipp Grimm"]
+packages = [ {include ="static"} ]
+include = [ "static/*" ]
+
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

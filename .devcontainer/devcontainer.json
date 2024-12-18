@@ -1,0 +1,24 @@
+{
+  "name": "TypeScript and Python Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:latest",
+  "features":{
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+			]
+		}
+	},
+  "postCreateCommand": "python3 -m pip install -r requirements.txt && npm install && npm run build",
+  // "forwardPorts": [3000, 5000, 5731],
+  "remoteUser": "root",
+  // "containerUser": "vscode"
+}
