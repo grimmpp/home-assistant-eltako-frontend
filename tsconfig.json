@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                // Modern JS support
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM", "DOM.Iterable", "WebWorker"],
     "module": "ESNext",                // Native ES modules
     "moduleResolution": "Node",        // Resolve imports
     "strict": true,                    // Enable strict type-checking
@@ -9,13 +10,20 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "static",                  // Output folder
     "baseUrl": ".",                    // Root path
-    "paths": {
-      "@/*": ["src/*"]                 // Aliases for cleaner imports
-    },
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "isolatedModules": true,
+    "paths": {
+      "@ha/*": ["../home-assistant-frontend/src/*"],
+    },
   },
   "include": ["src/**/*"],          // Include TS files
   "exclude": ["node_modules", "static"]  // Exclude unnecessary files
