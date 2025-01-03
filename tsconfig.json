@@ -8,8 +8,8 @@
     "esModuleInterop": true,           // Interop with ES modules
     "skipLibCheck": true,              // Skip library checks for faster build
     "forceConsistentCasingInFileNames": true,
-    "outDir": "static",                  // Output folder
-    "baseUrl": ".",                    // Root path
+    "outDir": "../static",                  // Output folder
+    "baseUrl": "./src",                    // Root path
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -21,10 +21,10 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "isolatedModules": true,
-    "paths": {
-      "@ha/*": ["../home-assistant-frontend/src/*"],
-    },
+    // "paths": {
+    //   "@ha/*": ["../homeassistant-frontend/src/*"],
+    // },
   },
-  "include": ["src/**/*"],          // Include TS files
+  "include": ["src/**/*.ts"],          // Include TS files
   "exclude": ["node_modules", "static"]  // Exclude unnecessary files
 }

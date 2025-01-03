@@ -11,4 +11,7 @@
 ## How to start webpage in development mode
 
 1. start devcontainer
-2. Run `npx vite` in devcontainer
+2. create file `.env` in project folder and add all variables defined in `./src/environment.d.ts`
+  * `HA_URL`: Is mandatory and the address to home assistant server e.g. `http://homeassistant.local:8123`
+  * `LONG_LIVED_TOKEN`: Is optional and avoids login prompt
+3. Run `npx vite dev` in devcontainer

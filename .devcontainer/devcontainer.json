@@ -20,7 +20,7 @@
 		}
 	},
   "postCreateCommand": "poetry install && python3 build.py",
-  "forwardPorts": [5731],
+  "forwardPorts": [5173],
   "remoteUser": "root"
   // "containerUser": "vscode"
 }

@@ -3,23 +3,34 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite --host 0.0.0.0"
+    "start": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
     "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.1.2",
     "lit": "^3.2.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.3"
   },
   "dependencies": {
-    "structured-clone": "^0.2.2"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "home-assistant-js-websocket": "^9.4.0",
+    "http-proxy": "^1.18.1",
+    "http-proxy-middleware": "^3.0.3",
+    "structured-clone": "^0.2.2",
+    "ws": "^8.18.0"
   }
 }
