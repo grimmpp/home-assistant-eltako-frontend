@@ -6,7 +6,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "ts-node src/index.ts"
+    "start": "node -r tsconfig-paths/register dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,19 +18,24 @@
     "@vitejs/plugin-vue": "^5.2.1",
     "concurrently": "^9.1.2",
     "lit": "^3.2.1",
+    "patch-package": "^8.0.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.3"
   },
   "dependencies": {
+    "config": "^3.3.12",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "hls.js": "1.5.7",
     "home-assistant-js-websocket": "^9.4.0",
     "http-proxy": "^1.18.1",
     "http-proxy-middleware": "^3.0.3",
+    "module-alias": "^2.2.3",
     "structured-clone": "^0.2.2",
+    "tsconfig-paths": "^4.2.0",
     "ws": "^8.18.0"
   }
 }

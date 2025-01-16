@@ -21,10 +21,11 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "isolatedModules": true,
-    // "paths": {
-    //   "@ha/*": ["../homeassistant-frontend/src/*"],
-    // },
+    "paths": {
+      "@ha/*": ["../homeassistant-frontend/src/*"],
+    },
   },
   "include": ["src/**/*.ts"],          // Include TS files
-  "exclude": ["node_modules", "static"]  // Exclude unnecessary files
+  "exclude": ["node_modules", "static"],  // Exclude unnecessary files
+  
 }

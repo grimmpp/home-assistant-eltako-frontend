@@ -5,6 +5,7 @@ import os
 def compile_typescript():
     """Compile TypeScript code using npm script."""
     print("Compiling TypeScript files...")
+    #npm install --prefix ./homeassistant-frontend
     # result = subprocess.run(["npm", "run", "build"], check=True)
     result = subprocess.run(["npx", "vite", "build"], check=True)
     if result.returncode != 0:
