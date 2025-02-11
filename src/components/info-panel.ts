@@ -5,6 +5,7 @@ import { HAConnection } from '../services/websocket_connection';
 
 import {map} from 'lit/directives/map.js';
 import {EventViewer} from './event-viewer';
+import { sharedStyles } from '../global-style';
 
 // Correct order: Decorator directly before the class and export before the class definition
 @customElement('info-panel')
@@ -17,11 +18,9 @@ export class InfoPanel extends LitElement {
   @property({ attribute: false }) private ha_config = {};
   @property({ attribute: false }) private usb_ports = [];
 
-  static styles = css`
-    h2 {
-      color: green;
-      font-family: Roboto, Noto, sans-serif;
-    }
+  static styles = [
+      sharedStyles,
+      css`
     .table_name {
       display: block;
       font-family: Arial, sans-serif;
@@ -39,8 +38,7 @@ export class InfoPanel extends LitElement {
     }  
     h1 {
       color: #4caf50;
-    }
-  `;
+    }`];
 
   protected async firstUpdated(_changedProps) {
     try {
@@ -57,7 +55,7 @@ export class InfoPanel extends LitElement {
     // })
 
       this.ha_config = JSON.stringify((await conn.getHassConfig()), null, 2)
-      // console.log("ha config: ", this.ha_config)
+      console.log("ha config: ", this.ha_config)
 
       // Example WebSocket call
       const data = await conn.getInfo()
@@ -70,6 +68,7 @@ export class InfoPanel extends LitElement {
 
       this.gateways = await conn.getGateways()
       console.log("gw: ", JSON.stringify(this.gateways, null, 2))
+
       
 
       this.error = ""
@@ -108,7 +107,7 @@ export class InfoPanel extends LitElement {
             <td>${gw['name']}</td>
             <td>${gw['id']}</td>
             <td>${gw['type']}</td>
-            <td>${gw['config_entry_id']}</td>
+            <td><pre>${JSON.stringify(gw, null, 2)}</pre></td>
         </tr>`)}
       </table>
 

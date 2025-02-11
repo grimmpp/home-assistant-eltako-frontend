@@ -14,11 +14,16 @@ import { customElement, property } from "lit/decorators.js";
 
 import type { LocationChangedEvent } from "./types/navigation";
 
+import '@ui5/webcomponents/dist/Button.js'; // Import UI5 Button
+import '@ui5/webcomponents-theming/dist/Assets.js'; // Theme assets
+
 import { HAConnection } from './services/websocket_connection'
 
+import { sharedStyles } from "./global-style";
 import './services/websocket_connection'
 import { InfoPanel } from "./components/info-panel";
-import { Banner } from "./components/banner"
+import { Header } from "./components/header"
+import { DeviceTable } from "./components/device-table";
 // import "./components/my-panel";
 
 
@@ -54,7 +59,8 @@ class EltakoFrontend extends LitElement {
     // this.addEventListener("eltako-location-changed", (e) => this._setRoute(e as LocationChangedEvent));
 
     this.infoPanel = new InfoPanel()
-    const banner = new Banner()
+    const header = new Header()
+    const deviceTable = new DeviceTable()
 
     this.addEventListener("eltako-reload", async (_) => {
       console.log("Reloading object");
@@ -98,42 +104,19 @@ class EltakoFrontend extends LitElement {
 
   protected render() {
     return html`
-      <eltako-banner></eltako-banner>
+      <eltako-header></eltako-header>  
+      <device-table></device-table>  
       <info-panel></info-panel>
+      
+      <button>Toggle Light</button>
     `;
   }
 
-  static get styles() {
-    // apply "Settings" style toolbar color for `hass-subpage`
-    return css`
-      html * 
-      {
-        color: rgb(33, 33, 33);
-        font-family: Roboto, Noto, sans-serif;
-        font-feature-settings: normal;
-        font-kerning: auto;
-        font-optical-sizing: auto;
-        font-size: 14px;
-        font-size-adjust: none;
-        font-stretch: 100%;
-        font-style: normal;
-        font-variant-alternates: normal;
-        font-variant-caps: normal;
-        font-variant-east-asian: normal;
-        font-variant-emoji: normal;
-        font-variant-ligatures: normal;
-        font-variant-numeric: normal;
-        font-variant-position: normal;
-        font-variation-settings: normal;
-      }
-      h2 {
-        font-family: Roboto, Noto, sans-serif;
-      }
-      body {
-        margin: 0px;
-      }
-    `;
-  }
+  static styles = [
+    sharedStyles,
+     css`
+      
+    `];
 
   private _applyTheme() {
     // this.style.backgroundColor = "var(--primary-background-color)";

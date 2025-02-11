@@ -25,6 +25,8 @@
     "vite": "^6.0.3"
   },
   "dependencies": {
+    "@ui5/webcomponents": "^2.6.2",
+    "antd": "^5.23.2",
     "config": "^3.3.12",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",

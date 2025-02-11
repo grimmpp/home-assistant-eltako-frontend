@@ -90,6 +90,10 @@ export class HAConnection {
         return await this.generic_sendMessagePromise('get_config')
     }
 
+    public async getStates(): Promise<Result> {
+        return await this.generic_sendMessagePromise('get_states')
+    }
+
     public async getHassThemes(): Promise<Result> {
         return await this.generic_sendMessagePromise('frontend/get_themes')
     }
@@ -100,6 +104,14 @@ export class HAConnection {
 
     public async getGateways(): Promise<Result> {
         return await this.generic_sendMessagePromise('eltako/configured_gateways')
+    }
+
+    public async getDevices(): Promise<Result> {
+        return await this.generic_sendMessagePromise('config/device_registry/list')
+    }
+
+    public async getEntities(): Promise<Result> {
+        return await this.generic_sendMessagePromise('config/entity_registry/list')
     }
 };
 
