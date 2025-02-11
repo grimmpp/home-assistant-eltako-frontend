@@ -116,7 +116,7 @@ vite.config.ts
 
 # Static output
 public/
-#static/
+static/
 
 # Temporary files
 *.tmp
