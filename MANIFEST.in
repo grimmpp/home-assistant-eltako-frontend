@@ -1,1 +1,1 @@
-recursive-include home_assistant_eltako_frontend/static *.html *.js
+recursive-include static *.html *.js

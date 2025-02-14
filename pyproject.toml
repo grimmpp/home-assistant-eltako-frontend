@@ -7,7 +7,9 @@ readme = "README.md"
 license = "MIT"
 keywords = ["enocean", "eltako", "home assistant", "frontend", "static files"]
 authors = ["Philipp Grimm"]
-packages = [ {include ="static", to = "home_assistant_eltako_frontend"}, {include="__init__.py", to = "home_assistant_eltako_frontend"} ]
+packages = [ 
+    {include ="static", to = "home_assistant_eltako_frontend/static"}, 
+    {include="__init__.py", to = "home_assistant_eltako_frontend"} ]
 include = [ 
     "static/**/*.html", 
     "static/**/*.js", 
