@@ -19,7 +19,7 @@ def build_package():
     open(os.path.join(os.path.dirname(__file__), 'static', '__init__.py'), 'w').close()
 
     print("Building the Python package...")
-    result = subprocess.run(["poetry", "build"], check=True)
+    result = subprocess.run(["poetry", "build", "--no-cache"], check=True)
     if result.returncode != 0:
         print("Poetry build failed.")
         sys.exit(result.returncode)

@@ -32,7 +32,7 @@ jobs:
 
       - name: Install python dependencies
         run: |
-          poetry install
+          poetry install --no-root
 
       - name: Install node and typescript
         run: |
