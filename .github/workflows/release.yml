@@ -42,7 +42,10 @@ jobs:
         run: python3 build.py
 
       - name: List folder
-        run: ls -la
+        run: ls -la static 
+
+      - name: List tar files
+        run: tar -tvf dist/home_assistant_eltako_frontend-0.0.3.tar.gz
 
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
