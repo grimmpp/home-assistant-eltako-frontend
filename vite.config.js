@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => {
     root: "./src",
     build: {
       outDir: '../static',
+      emptyOutDir: true,
       rollupOptions: {
         input: "./src/index.html", // Entry point
       },
