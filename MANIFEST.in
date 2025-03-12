@@ -1,1 +1,1 @@
-recursive-include static *.html *.js
+recursive-include static *.html *.js *.css

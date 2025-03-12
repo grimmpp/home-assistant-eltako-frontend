@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
       'process.env.HA_LONG_LIVED_TOKEN': JSON.stringify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3MjM3ZTZlYzY3MmY0MGU1YjFmMzk5ZGU2Y2E5NWI4MyIsImlhdCI6MTczNDk5MTk3OCwiZXhwIjoyMDUwMzUxOTc4fQ.JxkZf9yFmODwZgpQNIHF7II48fmtQ1GayVbNLOzukWk'),
       __STATIC_PATH__: JSON.stringify('/static/'),
     },
+    base: './',
   // root: './src',
   // root: "./dist",
     root: "./src",
@@ -18,6 +19,7 @@ export default defineConfig(({ mode }) => {
       emptyOutDir: true,
       rollupOptions: {
         input: "./src/index.html", // Entry point
+        esModule: true,
       },
     },
     // publicDir: 'public', // Folder for static files

@@ -24,6 +24,7 @@
     "paths": {
       "@ha/*": ["../homeassistant-frontend/src/*"],
     },
+    "tsBuildInfoFile": "node_modules/.cache/typescript/.tsbuildinfo",
   },
   "include": ["src/**/*.ts"],          // Include TS files
   "exclude": ["node_modules", "static"],  // Exclude unnecessary files
