@@ -3,13 +3,14 @@ import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
+  const isDev = mode === 'development'
   return {
-    define: {
+    define: isDev ? {
       'process.env': env,
       'process.env.HA_URL': JSON.stringify('http://192.168.178.91:8123'),
       'process.env.HA_LONG_LIVED_TOKEN': JSON.stringify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3MjM3ZTZlYzY3MmY0MGU1YjFmMzk5ZGU2Y2E5NWI4MyIsImlhdCI6MTczNDk5MTk3OCwiZXhwIjoyMDUwMzUxOTc4fQ.JxkZf9yFmODwZgpQNIHF7II48fmtQ1GayVbNLOzukWk'),
       __STATIC_PATH__: JSON.stringify('/static/'),
-    },
+    } : {},
     base: './',
   // root: './src',
   // root: "./dist",

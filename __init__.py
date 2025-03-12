@@ -9,7 +9,7 @@ def locate_dir() -> str:
 
 
 # The webcomponent name that loads the panel (main.ts)
-webcomponent_name: Final = "home-assistant-eltako-frontend"
+webcomponent_name: Final = "eltako-frontend"
 
-local_module_url: Final = './assets/index-BYw5rWpL.js'
-module_url: Final = '/eltako/assets/index-BYw5rWpL.js'
+local_module_url: Final = './assets/index-iVuHC8lU.js'
+module_url: Final = '/eltako/assets/index-iVuHC8lU.js'

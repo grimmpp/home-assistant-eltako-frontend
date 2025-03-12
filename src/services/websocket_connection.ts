@@ -1,3 +1,4 @@
+import { Console } from "console";
 import {
     getAuth,
     createConnection,
@@ -25,11 +26,13 @@ export class HAConnection {
     public async connect() {
         if (this.connection == undefined) {
             let auth;
-            const haUrl : string = process.env.HA_URL || "http://localhost:8123"
+            const haUrl : string = process.env.HA_URL || "http://192.168.178.91:8123" // "http://homeassistant.local:8123"
             const longLivedToken : string = process.env.HA_LONG_LIVED_TOKEN
 
             if ( longLivedToken ) {
-                try{
+                console.log("Use long-lived-token.");
+                
+                try {
                     auth = createLongLivedTokenAuth(haUrl, longLivedToken);
                 } catch(err) {
                     console.error(err)
@@ -37,6 +40,8 @@ export class HAConnection {
             }
             else 
             {
+                console.log("Use HA auth. Use address: %s", haUrl);
+
                 try {
                     // Try to pick up authentication after user logs in
                     auth = await getAuth();
